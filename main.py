@@ -599,7 +599,7 @@ async def update_restart(_, message: Message, lang):
 @language
 @handle_error
 async def stream_end(_, update: Update, lang):
-    if isinstance(update, StreamAudioEnded) or isinstance(update, StreamVideoEnded):
+    if isinstance(update, StreamAudioEnded):
         chat_id = update.chat_id
         group = get_group(chat_id)
         if group["loop"]:
